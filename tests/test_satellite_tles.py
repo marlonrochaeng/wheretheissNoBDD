@@ -20,3 +20,12 @@ def test_satellite_tles_text(id, format):
 
     assert response['code'] == 200
     assert 'ISS (ZARYA)' in response['request_info']
+
+
+@pytest.mark.parametrize("id,code,request_info", [(101,404,{'error': 'satellite not found', 'status': 404})])
+def test_wrong_satellite_tle(id, code, request_info):
+    s = Satellites()
+    response = s.get_tles(id)
+
+    assert response['code'] == code
+    assert response['request_info'] == request_info

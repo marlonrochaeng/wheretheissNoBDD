@@ -27,3 +27,11 @@ def test_satellite_positions_correct_quantity(id, timestamp, unit, quantity):
 
     response = s.get_positions(id, timestamp, unit)
     assert len(response['request_info']) == quantity
+
+@pytest.mark.parametrize("id,timestamp,unit", [(25544, [1436029892], 'test')])
+def test_satellite_other_unit(id, timestamp, unit):
+    s = Satellites()
+
+    response = s.get_positions(id, timestamp, unit)
+    
+    assert response['code'] == 200
