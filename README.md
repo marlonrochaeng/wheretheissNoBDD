@@ -1,6 +1,6 @@
-# Where the ISS API Automation
+# Where the ISS at API Automation
 
-Using the [wheretheiss](https://wheretheiss.at/w/developer) service, you can get current, past, or future position of the ISS, get timezone information about a set of coordinates, and also get TLE data on the ISS.
+Using the [wheretheissat](https://wheretheiss.at/w/developer) service, you can get current, past, or future position of the ISS, get timezone information about a set of coordinates, and also get TLE data on the ISS.
 
 In this automation project, I'm using Python + Pytest (test framework) + Requests (lib).
 
@@ -22,6 +22,7 @@ In this automation project, I'm using Python + Pytest (test framework) + Request
 ## Prerequisite
  - Python 3.7.3 or similar
  - Git
+- Docker (if you want to run with docker)
 
 ## Installation
 
@@ -70,3 +71,25 @@ If you want to run the tests in parallel:
 pytest -n <num_of_cpus>
 ```
 By default, pytest runs tests in sequential order (alphabetical). In some scenarios, the test suite can have a great number of tests and this can lead to a large execution time. To overcome this, we can use pytest-xdist to run tests in parallel.
+
+## Docker
+If you want to run with docker and want to see the html report or consume it later with Jenkins, just run:
+```bash
+docker build .
+```
+Create your container with
+```bash
+docker run imageSha (generated after the docker build command)
+```
+Get your docker container ID with:
+```bash
+docker ps -a
+```
+Retrieve the information with 
+```bash
+docker cp containerID:app/report.html .
+```
+To generate a xml report, change the html argument in the Dockerfile for:
+```docker
+--junitxml=report/result.xml
+```
