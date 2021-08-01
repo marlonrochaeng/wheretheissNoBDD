@@ -48,7 +48,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-If you want to run all of the tests:
+If you want to run all tests:
 
 ```bash
 pytest
@@ -62,7 +62,7 @@ If you want to generate a html report:
 ```bash
 pytest --html=report.html 
 ```
-The result will be like:
+The result will look like:
 ![alt text](https://blog.cedrotech.com/hs-fs/hubfs/Imported_Blog_Media/image15-2.png?width=974&height=497&name=image15-2.png)
 (source: One of my articles)
 
