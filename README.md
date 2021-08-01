@@ -64,7 +64,7 @@ pytest --html=report.html
 ```
 The result will look like:
 ![alt text](https://blog.cedrotech.com/hs-fs/hubfs/Imported_Blog_Media/image15-2.png?width=974&height=497&name=image15-2.png)
-(source: One of my articles)
+(source: [One of my articles](http://blog.cedrotech.com/pytest-faca-testes-e-gere-relatorios-rapidamente))
 
 If you want to run the tests in parallel:
 ```bash
