@@ -1,6 +1,6 @@
 # Where the ISS at API Automation
 
-Using the [wheretheissat](https://wheretheiss.at/w/developer) service, you can get current, past, or future position of the ISS, get timezone information about a set of coordinates, and also get TLE data on the ISS.
+Using the [wheretheissat](https://wheretheiss.at/w/developer) service, you can get current, past, or future position of the ISS. Get timezone information about a set of coordinates, and also get TLE data on the ISS.
 
 In this automation project, I'm using Python + Pytest (test framework) + Requests (lib).
 
@@ -15,14 +15,14 @@ In this automation project, I'm using Python + Pytest (test framework) + Request
 ## Behaviors found during testing
  - If you pass a big timestamp (ex: 143602989200000) as a parameter to the **satellites/[id]/positions** endpoint, the API will take longer to return a 500 error without a fail message.
  - If you pass more than 10 timestamps as a parameter to the **satellites/[id]/positions** endpoint, the API will take longer to return a 500 error without a fail message.
- - If you pass another unit than **mile** or **kilometer** to the **satellites/[id]/positions** endpoint, the API will work fine but should have a validation.
- - If you pass a future timestamp or a really old one to the same endpoint, the API will work fine but should have a validation.
+ - If you pass another unit than **mile** or **kilometer** to the **satellites/[id]/positions** endpoint, the API will work fine but must have a validation.
+ - If you pass a future timestamp or a really old one to the same endpoint, the API will work fine but must have a validation.
  - All IDs are integers, only one is string
 
 ## Prerequisite
  - Python 3.7.3 or similar
  - Git
-- Docker (if you want to run with docker)
+ - Docker (if you want to run with docker)
 
 ## Installation
 
